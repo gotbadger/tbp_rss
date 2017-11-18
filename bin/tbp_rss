@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require "#{File.dirname(__FILE__)}/../lib/creator.rb"
+Kernel.abort("tbp_rss <title> <search page url>") if ARGV.length < 2
+title = ARGV[0]
+url = ARGV[1]
+puts Creator.new(title, url).create
