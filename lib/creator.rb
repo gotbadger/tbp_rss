@@ -25,6 +25,9 @@ class Creator
         date = date.gsub(160.chr("UTF-8"),"-")
         if date.include?(':')
           exp = date.split('-')
+          if exp[0] == 'Today'
+            exp[0] = "#{Date.today.month}-#{Date.today.day}"
+          end
           exp[2] = Date.today.year
           date = exp.join('-')
         end
